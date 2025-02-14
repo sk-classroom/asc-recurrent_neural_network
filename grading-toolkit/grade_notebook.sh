@@ -14,6 +14,11 @@ fi
 
 ungraded_notebook="tmp_ungraded.ipynb"
 ungraded_py="tmp_ungraded.py"
+import_py="tmp_import.py"
+
+# Extract import statements from test file
+grep -E "^(import|from.*import)" $test_python_script > $import_py
+
 
 # Get the cells with tag "gradable"
 jq '.cells |= map(select(.metadata.tags and (.metadata.tags | index("'$cell_tag'"))))' $assignment_notebook > $ungraded_notebook
@@ -22,7 +27,7 @@ jq '.cells |= map(select(.metadata.tags and (.metadata.tags | index("'$cell_tag'
 
 jupytext $ungraded_notebook --to py
 
-cat $ungraded_py $test_python_script > tmp_run.py
+cat $import_py $ungraded_py $test_python_script > tmp_run.py
 python tmp_run.py || { echo "Assertion error occurred"; exit 1; }
 rm tmp_run.py
 rm $ungraded_notebook $ungraded_py

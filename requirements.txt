@@ -1,4 +1,3 @@
-igraph
 scikit-learn
 numpy
 scipy
@@ -11,3 +10,5 @@ tqdm
 black
 nbconvert
 jupytext
+statsmodels
+torch

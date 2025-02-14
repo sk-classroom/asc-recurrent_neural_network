@@ -1,1 +1,1 @@
-Place the repository data here
+- Data is taken from https://www.kaggle.com/datasets/garrickhague/temp-data-of-prominent-us-cities-from-1948-to-2022
