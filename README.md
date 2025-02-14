@@ -1,6 +1,6 @@
 # Workflow
 
-1. Complete [the assignment notebook](assignment/assignment.ipynb)
+1. Complete two assignment notebooks: [assignment.ipynb](assignment/assignment.ipynb) and [assignment_02.ipynb](assignment/assignment_02.ipynb)
 2. Git add, commit, push the notebook. If you are not sure what they are, [here is a guide](https://graphite.dev/guides/git-add-commit-push)
 3. The assignment will be auto-graded, and you can check out the results at [Github Action](https://docs.github.com/en/education/manage-coursework-with-github-classroom/learn-with-github-classroom/view-autograding-results)
 
