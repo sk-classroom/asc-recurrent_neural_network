@@ -48,11 +48,6 @@ def longShortTermMemory(input, hidden_state, cell_state):
     # 2. Updates the hidden state for the next time step
     output, hidden_state = output_gate(input, hidden_state, cell_state)
 
-    # Verify that forget_factor, cell_state and output are numeric values
-    assert all(isinstance(x, (int, float)) for x in forget_factor), "Forget factor must contain numeric values"
-    assert all(isinstance(x, (int, float)) for x in cell_state), "Cell state must contain numeric values"
-    assert all(isinstance(x, (int, float)) for x in output), "Output must contain numeric values"
-
     return (
         hidden_state,  # [min_value, padding] for next step
         cell_state,  # Updated running [sum, product, min]
